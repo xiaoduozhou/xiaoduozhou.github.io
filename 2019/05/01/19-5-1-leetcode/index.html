@@ -96,23 +96,20 @@
 
 
 
-  <meta name="description" content="Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install">
-<meta name="keywords" content="tag1">
+  <meta name="description" content="题目1. 求 Pow(x,n)no.50 题目简介：&amp;emsp;&amp;emsp;求pow(x,n) ,时间复杂度要小。 题解：&amp;emsp;&amp;emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。 代码：1234567">
+<meta name="keywords" content="leetcode,分治">
 <meta property="og:type" content="article">
-<meta property="og:title" content="today">
-<meta property="og:url" content="http://yoursite.com/2019/05/01/today/index.html">
-<meta property="og:site_name" content="Learning Blog">
-<meta property="og:description" content="Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install">
+<meta property="og:title" content="leetcode分治">
+<meta property="og:url" content="http://yoursite.com/2019/05/01/19-5-1-leetcode/index.html">
+<meta property="og:site_name" content="咖啡的日常">
+<meta property="og:description" content="题目1. 求 Pow(x,n)no.50 题目简介：&amp;emsp;&amp;emsp;求pow(x,n) ,时间复杂度要小。 题解：&amp;emsp;&amp;emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。 代码：1234567">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/05/01/today/1.PNG">
-<meta property="og:image" content="http://yoursite.com/2019/05/01/today/2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/1.PNG">
-<meta property="og:image" content="http://yoursite.com/2019/05/01/today/1.PNG">
-<meta property="og:updated_time" content="2019-05-01T09:38:59.767Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/01/19-5-1-leetcode/50.png">
+<meta property="og:updated_time" content="2019-05-01T10:53:47.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="today">
-<meta name="twitter:description" content="Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/01/today/1.PNG">
+<meta name="twitter:title" content="leetcode分治">
+<meta name="twitter:description" content="题目1. 求 Pow(x,n)no.50 题目简介：&amp;emsp;&amp;emsp;求pow(x,n) ,时间复杂度要小。 题解：&amp;emsp;&amp;emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。 代码：1234567">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/01/19-5-1-leetcode/50.png">
 
 
 
@@ -120,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/01/today/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/01/19-5-1-leetcode/">
 
 
 
@@ -130,7 +127,7 @@
   };
 </script>
 
-  <title>today | Learning Blog</title>
+  <title>leetcode分治 | 咖啡的日常</title>
   
 
 
@@ -189,7 +186,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Learning Blog</span>
+        <span class="site-title">咖啡的日常</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -233,7 +230,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -243,7 +240,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
         
@@ -267,7 +264,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -277,7 +274,24 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
 
@@ -329,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/today/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/19-5-1-leetcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoduo zhou">
@@ -338,7 +352,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Learning Blog">
+      <meta itemprop="name" content="咖啡的日常">
     </span>
 
     
@@ -346,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">today
+          <h1 class="post-title" itemprop="name headline">leetcode分治
 
               
             
@@ -372,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 03:09:44 / 修改时间：17:38:59" itemprop="dateCreated datePublished" datetime="2019-05-01T03:09:44+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:34:08 / 修改时间：18:53:47" itemprop="dateCreated datePublished" datetime="2019-05-01T18:34:08+08:00">2019-05-01</time>
             
 
             
@@ -394,14 +408,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Diary/sport/" itemprop="url" rel="index"><span itemprop="name">sport</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/leetcode/分治/" itemprop="url" rel="index"><span itemprop="name">分治</span></a></span>
 
                 
                 
@@ -420,8 +434,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/01/today/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/01/today/" itemprop="commentCount"></span>
+                <a href="/2019/05/01/19-5-1-leetcode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/01/19-5-1-leetcode/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -449,24 +463,10 @@
       
 
       
-        <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<p><a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/setup</a></p>
-<p>hexo init<br>初始化主目录</p>
-<p>npm install<br>安装依赖</p>
-<p>hexo clean<br>删除本地已经生成的所有静态文件</p>
-<p>hexo g<br>生成静态博客</p>
-<p>hexo s<br>开启本地服务器 (<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>)</p>
-<p>hexo init [folder]<br>新建一个网站<br>数学</p>
-<script type="math/tex; mode=display">f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}</script><p>hexo new [layout] <title><br>新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</title></p>
-<p>hexo server<br>启动服务器</p>
-<p>hexo deploy<br>部署网站</p>
-<p>代码块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import python</span><br><span class="line">  print(y)</span><br></pre></td></tr></table></figure></p>
-<p>设置大小<br><img width="200" src="1.PNG"></p>
-<p><img width="500" src="2.jpg"></p>
-<p>放图片<br><img src="/images/1.PNG" alt></p>
-<p>相对路径图片<br><img src="/2019/05/01/today/1.PNG"></p>
-
+        <h3 id="题目1-求-Pow-x-n"><a href="#题目1-求-Pow-x-n" class="headerlink" title="题目1. 求 Pow(x,n)"></a>题目1. 求 Pow(x,n)</h3><p><a href="https://leetcode.com/problems/powx-n/" target="_blank" rel="noopener">no.50</a><br><img width="400" src="50.png"></p>
+<h4 id="题目简介："><a href="#题目简介：" class="headerlink" title="题目简介："></a>题目简介：</h4><p>&emsp;&emsp;求pow(x,n) ,时间复杂度要小。</p>
+<h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>&emsp;&emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。</p>
+<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public double myPow(double x, int n) &#123;</span><br><span class="line">        Map&lt;Integer,Double&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        if(n &lt;0)&#123;</span><br><span class="line">           return 1/ Pow(x,-n,map);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return Pow(x,n,map);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    double Pow(double x, int n,Map&lt;Integer,Double&gt; map)&#123;</span><br><span class="line">        if (n ==0)return 1;</span><br><span class="line">        if(n == 1)return x;</span><br><span class="line">        if(n == 2)return x*x;</span><br><span class="line">        if(map.get(n) != null)&#123;  //计算过了就直接返回</span><br><span class="line">             return map.get(n);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Double t=0.0;</span><br><span class="line">            if(n %2 == 0)&#123;</span><br><span class="line">                 t = Pow(x,n/2,map)*Pow(x,n/2,map);  //n为偶数</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                 t =  Pow(x,n/2,map)*Pow(x,n/2,map)*x; //n为奇数</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(n,t);  //没计算过就存起来</span><br><span class="line">            return t;</span><br><span class="line">        &#125; </span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -489,7 +489,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tag1/" rel="tag"># tag1</a>
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/分治/" rel="tag"># 分治</a>
           
         </div>
       
@@ -511,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/01/passage/" rel="prev" title="passage">
-                passage <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -590,7 +588,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -613,7 +611,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -636,7 +636,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -689,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.</span> <span class="nav-text">Create a new post</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目1-求-Pow-x-n"><span class="nav-number">1.</span> <span class="nav-text">题目1. 求 Pow(x,n)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目简介："><span class="nav-number">1.1.</span> <span class="nav-text">题目简介：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解："><span class="nav-number">1.2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码："><span class="nav-number">1.3.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -847,9 +851,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/05/01/today/";
-    this.page.identifier = "2019/05/01/today/";
-    this.page.title = 'today';
+    this.page.url = "http://yoursite.com/2019/05/01/19-5-1-leetcode/";
+    this.page.identifier = "2019/05/01/19-5-1-leetcode/";
+    this.page.title = 'leetcode分治';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
@@ -884,46 +888,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

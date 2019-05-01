@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[passage]]></title>
-    <url>%2F2019%2F05%2F01%2Fpassage%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[today]]></title>
-    <url>%2F2019%2F05%2F01%2Ftoday%2F</url>
-    <content type="text"><![CDATA[Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install安装依赖 hexo clean删除本地已经生成的所有静态文件 hexo g生成静态博客 hexo s开启本地服务器 (http://localhost:4000/) hexo init [folder]新建一个网站数学 f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}hexo new [layout] 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 hexo server启动服务器 hexo deploy部署网站 代码块12import python print(y) 设置大小 放图片 相对路径图片]]></content>
+    <title><![CDATA[leetcode分治]]></title>
+    <url>%2F2019%2F05%2F01%2F19-5-1-leetcode%2F</url>
+    <content type="text"><![CDATA[题目1. 求 Pow(x,n)no.50 题目简介：&emsp;&emsp;求pow(x,n) ,时间复杂度要小。 题解：&emsp;&emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。 代码：1234567891011121314151617181920212223242526272829303132​class Solution &#123; public double myPow(double x, int n) &#123; Map&lt;Integer,Double&gt; map = new HashMap&lt;&gt;(); if(n &lt;0)&#123; return 1/ Pow(x,-n,map); &#125;else&#123; return Pow(x,n,map); &#125; &#125; double Pow(double x, int n,Map&lt;Integer,Double&gt; map)&#123; if (n ==0)return 1; if(n == 1)return x; if(n == 2)return x*x; if(map.get(n) != null)&#123; //计算过了就直接返回 return map.get(n); &#125;else&#123; Double t=0.0; if(n %2 == 0)&#123; t = Pow(x,n/2,map)*Pow(x,n/2,map); //n为偶数 &#125;else&#123; t = Pow(x,n/2,map)*Pow(x,n/2,map)*x; //n为奇数 &#125; map.put(n,t); //没计算过就存起来 return t; &#125; &#125;&#125;​]]></content>
       <categories>
-        <category>Diary</category>
-        <category>sport</category>
+        <category>leetcode</category>
+        <category>分治</category>
       </categories>
       <tags>
-        <tag>tag1</tag>
+        <tag>leetcode</tag>
+        <tag>分治</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World 3]]></title>
     <url>%2F2019%2F04%2F30%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment 数学 f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}]]></content>
       <categories>
         <category>Diary</category>
         <category>run</category>

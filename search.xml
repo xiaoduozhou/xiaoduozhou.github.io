@@ -8,7 +8,7 @@
   <entry>
     <title><![CDATA[today]]></title>
     <url>%2F2019%2F05%2F01%2Ftoday%2F</url>
-    <content type="text"><![CDATA[Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install安装依赖 hexo clean删除本地已经生成的所有静态文件 hexo g生成静态博客 hexo s开启本地服务器 (http://localhost:4000/) hexo init [folder]新建一个网站数学$\sum{i=0}^N\int{a}^{b}g(t,i)\text{d}t$ hexo new [layout] 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 hexo server启动服务器 hexo deploy部署网站 代码块12import python print(y) 设置大小 放图片 相对路径图片]]></content>
+    <content type="text"><![CDATA[Create a new postDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake https://hexo.io/zh-cn/docs/setup hexo init初始化主目录 npm install安装依赖 hexo clean删除本地已经生成的所有静态文件 hexo g生成静态博客 hexo s开启本地服务器 (http://localhost:4000/) hexo init [folder]新建一个网站数学 f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}hexo new [layout] 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 hexo server启动服务器 hexo deploy部署网站 代码块12import python print(y) 设置大小 放图片 相对路径图片]]></content>
       <categories>
         <category>Diary</category>
         <category>sport</category>

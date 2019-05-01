@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[leetcode分治]]></title>
+    <title><![CDATA[分治]]></title>
     <url>%2F2019%2F05%2F01%2F19-5-1-leetcode%2F</url>
     <content type="text"><![CDATA[题目1. 求 Pow(x,n)no.50 题目简介：&emsp;&emsp;求pow(x,n) ,时间复杂度要小。 题解：&emsp;&emsp;首先 n可能有正负，所以分两种情况处理 return 1/ Pow(x,-n,map)和 return Pow(x,n,map); 在计算pow的时候 根据n是奇数或者是偶数来进行分治。用map记录已经计算过的值，减少递归的数量级。 代码：1234567891011121314151617181920212223242526272829303132​class Solution &#123; public double myPow(double x, int n) &#123; Map&lt;Integer,Double&gt; map = new HashMap&lt;&gt;(); if(n &lt;0)&#123; return 1/ Pow(x,-n,map); &#125;else&#123; return Pow(x,n,map); &#125; &#125; double Pow(double x, int n,Map&lt;Integer,Double&gt; map)&#123; if (n ==0)return 1; if(n == 1)return x; if(n == 2)return x*x; if(map.get(n) != null)&#123; //计算过了就直接返回 return map.get(n); &#125;else&#123; Double t=0.0; if(n %2 == 0)&#123; t = Pow(x,n/2,map)*Pow(x,n/2,map); //n为偶数 &#125;else&#123; t = Pow(x,n/2,map)*Pow(x,n/2,map)*x; //n为奇数 &#125; map.put(n,t); //没计算过就存起来 return t; &#125; &#125;&#125;​]]></content>
       <categories>
         <category>leetcode</category>
-        <category>分治</category>
       </categories>
       <tags>
         <tag>leetcode</tag>
+        <tag>分治</tag>
       </tags>
   </entry>
   <entry>

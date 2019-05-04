@@ -337,6 +337,238 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/pytorch-base-use/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoduo zhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咖啡的日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/04/pytorch-base-use/" class="post-title-link" itemprop="url">pytorch基本语法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-04 15:17:30 / 修改时间：16:58:20" itemprop="dateCreated datePublished" datetime="2019-05-04T15:17:30+08:00">2019-05-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/pytorch基础/" itemprop="url" rel="index"><span itemprop="name">pytorch基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/04/pytorch-base-use/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/04/pytorch-base-use/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="pytorch基础操作："><a href="#pytorch基础操作：" class="headerlink" title="pytorch基础操作："></a>pytorch基础操作：</h3><ul>
+<li>初始化0矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.zeros(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.float)</span><br><span class="line">x = torch.tensor([<span class="number">5.5</span>, <span class="number">3</span>]) <span class="comment">#构建指定元素的矩阵</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/1.jpg">
+<ul>
+<li>加法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.add(x, y)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/2.jpg">
+<ul>
+<li>任何要原地改动tensor的操作，需要加 _. 比如: x.copy_(y), x.t_(), x.add_(y)will change x.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"y"</span>,y)</span><br><span class="line">x.copy_(y)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/3.jpg">
+<ul>
+<li>torch.view(v1,v2,…)来resize或者reshape tensor，例如<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x.shape,x.view(<span class="number">-1</span>,<span class="number">3</span>).shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/4.jpg">
+<ul>
+<li>tensor转numpy,若tensor只有一个元素可以使用.item()取出。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">y = x.numpy()</span><br><span class="line">z = torch.tensor(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,type(x))</span><br><span class="line">print(<span class="string">"y"</span>,type(y))</span><br><span class="line">print(<span class="string">"z"</span>,z,z.item())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/5.jpg">
+<h3 id="pytorch拼接"><a href="#pytorch拼接" class="headerlink" title="pytorch拼接"></a>pytorch拼接</h3><ul>
+<li>cat沿着数据某一维度拼接<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.cat((x,y),<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x,x.shape)</span><br><span class="line">print(<span class="string">"y"</span>,y,y.shape)</span><br><span class="line">print(<span class="string">"z"</span>,z,z.shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/21.jpg">
+<ul>
+<li>stack 增加新的维度进行堆叠<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.stack((x,y),<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x,x.shape)</span><br><span class="line">print(<span class="string">"y"</span>,y,y.shape)</span><br><span class="line">print(<span class="string">"z"</span>,z,z.shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/22.jpg">
+<ul>
+<li>squeeze 和 unsqueeze, squeeze(dim_n)压缩，即去掉元素数量为1的dim_n维度。同理unsqueeze(dim_n)，增加dim_n维度，元素数量为1。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x.squeeze().shape)</span><br><span class="line">print(<span class="string">"x"</span>,x.unsqueeze(<span class="number">0</span>).shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/23.jpg">
+<ul>
+<li>把某一维度的元素反过来(例如第二维)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br><span class="line">index = [<span class="number">3</span>-i<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)]</span><br><span class="line">print(index)</span><br><span class="line">print(<span class="string">"x_change"</span>,x[:,index,:])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/24.jpg">
+<ul>
+<li><p>topk</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.topk(input, k, dim=None, largest=True, + + sorted=True, out=None) -&gt; (Tensor, LongTensor)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>input (Tensor) – 输入张量</li>
+<li>k (int) – “top-k”中的k</li>
+<li>dim (int, optional) – 排序的维</li>
+<li>largest (bool, optional) 布尔值，控制返回最大或最小值sorted (bool, optional) 布尔值，控制返回值是否排序</li>
+<li>out (tuple, optional) – 可选输出张量 (Tensor, LongTensor) output buffer</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">-5.4783</span>, <span class="number">0.2298</span> , <span class="number">0.11</span>],</span><br><span class="line">                           [<span class="number">-4.2573</span>, <span class="number">-0.4794</span> ,<span class="number">0.05</span>],</span><br><span class="line">                           [<span class="number">-0.1070</span>, <span class="number">-5.1511</span> , <span class="number">0.01</span>],</span><br><span class="line">                           [<span class="number">-0.1785</span>, <span class="number">-4.3339</span>,<span class="number">-0.02</span>]])</span><br><span class="line"></span><br><span class="line">value,index = output.topk(<span class="number">2</span>,dim=<span class="number">1</span>)</span><br><span class="line">print(value)</span><br><span class="line">print(index)</span><br></pre></td></tr></table></figure>
+<img src="/2019/05/04/pytorch-base-use/25.jpg">
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/usersim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -942,7 +1174,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -965,7 +1197,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -992,7 +1226,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1199,6 +1435,8 @@
 
   
   
+    
+      
     
       
         

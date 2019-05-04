@@ -96,19 +96,29 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="pytorch基础操作： 初始化0矩阵12x = torch.zeros(5, 3, dtype=torch.float)x = torch.tensor([5.5, 3]) #构建指定元素的矩阵     加法123x = torch.randn(2,3)y = torch.randn(2,3)z = torch.add(x, y)     任何要原地改动tensor的操作，需要加 _. 比如:">
+<meta name="keywords" content="pytorch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test">
-<meta property="og:url" content="http://yoursite.com/2019/04/30/hello-world/index.html">
+<meta property="og:title" content="pytorch基本语法">
+<meta property="og:url" content="http://yoursite.com/2019/05/04/pytorch-base-use/index.html">
 <meta property="og:site_name" content="咖啡的日常">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="pytorch基础操作： 初始化0矩阵12x = torch.zeros(5, 3, dtype=torch.float)x = torch.tensor([5.5, 3]) #构建指定元素的矩阵     加法123x = torch.randn(2,3)y = torch.randn(2,3)z = torch.add(x, y)     任何要原地改动tensor的操作，需要加 _. 比如:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/rabbit.jpg">
-<meta property="og:updated_time" content="2019-05-04T06:26:50.960Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/21.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/22.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/23.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/24.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/25.jpg">
+<meta property="og:updated_time" content="2019-05-04T08:58:20.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Test">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="twitter:image" content="http://yoursite.com/images/rabbit.jpg">
+<meta name="twitter:title" content="pytorch基本语法">
+<meta name="twitter:description" content="pytorch基础操作： 初始化0矩阵12x = torch.zeros(5, 3, dtype=torch.float)x = torch.tensor([5.5, 3]) #构建指定元素的矩阵     加法123x = torch.randn(2,3)y = torch.randn(2,3)z = torch.add(x, y)     任何要原地改动tensor的操作，需要加 _. 比如:">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/1.jpg">
 
 
 
@@ -116,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/30/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/04/pytorch-base-use/">
 
 
 
@@ -126,7 +136,7 @@
   };
 </script>
 
-  <title>Test | 咖啡的日常</title>
+  <title>pytorch基本语法 | 咖啡的日常</title>
   
 
 
@@ -342,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/pytorch-base-use/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoduo zhou">
@@ -359,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Test
+          <h1 class="post-title" itemprop="name headline">pytorch基本语法
 
               
             
@@ -385,28 +395,34 @@
                 
               
 
-              <time title="创建时间：2019-04-30 17:09:24" itemprop="dateCreated datePublished" datetime="2019-04-30T17:09:24+08:00">2019-04-30</time>
+              <time title="创建时间：2019-05-04 15:17:30 / 修改时间：16:58:20" itemprop="dateCreated datePublished" datetime="2019-05-04T15:17:30+08:00">2019-05-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-04 14:26:50" itemprop="dateModified" datetime="2019-05-04T14:26:50+08:00">2019-05-04</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/pytorch基础/" itemprop="url" rel="index"><span itemprop="name">pytorch基础</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -420,8 +436,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/30/hello-world/" itemprop="commentCount"></span>
+                <a href="/2019/05/04/pytorch-base-use/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/04/pytorch-base-use/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -449,18 +465,65 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a><br><img src="/images/rabbit.jpg" alt></p>
-<p>数学</p>
-<script type="math/tex; mode=display">f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}</script><p>公式显示错误<br><a href="https://www.jianshu.com/p/49538f7d9512" target="_blank" rel="noopener">https://www.jianshu.com/p/49538f7d9512</a></p>
+        <h3 id="pytorch基础操作："><a href="#pytorch基础操作：" class="headerlink" title="pytorch基础操作："></a>pytorch基础操作：</h3><ul>
+<li>初始化0矩阵<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.zeros(<span class="number">5</span>, <span class="number">3</span>, dtype=torch.float)</span><br><span class="line">x = torch.tensor([<span class="number">5.5</span>, <span class="number">3</span>]) <span class="comment">#构建指定元素的矩阵</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/1.jpg">
+<ul>
+<li>加法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.add(x, y)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/2.jpg">
+<ul>
+<li>任何要原地改动tensor的操作，需要加 _. 比如: x.copy_(y), x.t_(), x.add_(y)will change x.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"y"</span>,y)</span><br><span class="line">x.copy_(y)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/3.jpg">
+<ul>
+<li>torch.view(v1,v2,…)来resize或者reshape tensor，例如<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x.shape,x.view(<span class="number">-1</span>,<span class="number">3</span>).shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/4.jpg">
+<ul>
+<li>tensor转numpy,若tensor只有一个元素可以使用.item()取出。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">y = x.numpy()</span><br><span class="line">z = torch.tensor(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,type(x))</span><br><span class="line">print(<span class="string">"y"</span>,type(y))</span><br><span class="line">print(<span class="string">"z"</span>,z,z.item())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/5.jpg">
+<h3 id="pytorch拼接"><a href="#pytorch拼接" class="headerlink" title="pytorch拼接"></a>pytorch拼接</h3><ul>
+<li>cat沿着数据某一维度拼接<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.cat((x,y),<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x,x.shape)</span><br><span class="line">print(<span class="string">"y"</span>,y,y.shape)</span><br><span class="line">print(<span class="string">"z"</span>,z,z.shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/21.jpg">
+<ul>
+<li>stack 增加新的维度进行堆叠<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">y = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">z = torch.stack((x,y),<span class="number">1</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x,x.shape)</span><br><span class="line">print(<span class="string">"y"</span>,y,y.shape)</span><br><span class="line">print(<span class="string">"z"</span>,z,z.shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/22.jpg">
+<ul>
+<li>squeeze 和 unsqueeze, squeeze(dim_n)压缩，即去掉元素数量为1的dim_n维度。同理unsqueeze(dim_n)，增加dim_n维度，元素数量为1。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x.squeeze().shape)</span><br><span class="line">print(<span class="string">"x"</span>,x.unsqueeze(<span class="number">0</span>).shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/23.jpg">
+<ul>
+<li>把某一维度的元素反过来(例如第二维)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">print(<span class="string">"x"</span>,x)</span><br><span class="line">index = [<span class="number">3</span>-i<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)]</span><br><span class="line">print(index)</span><br><span class="line">print(<span class="string">"x_change"</span>,x[:,index,:])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/24.jpg">
+<ul>
+<li><p>topk</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.topk(input, k, dim=None, largest=True, + + sorted=True, out=None) -&gt; (Tensor, LongTensor)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>input (Tensor) – 输入张量</li>
+<li>k (int) – “top-k”中的k</li>
+<li>dim (int, optional) – 排序的维</li>
+<li>largest (bool, optional) 布尔值，控制返回最大或最小值sorted (bool, optional) 布尔值，控制返回值是否排序</li>
+<li>out (tuple, optional) – 可选输出张量 (Tensor, LongTensor) output buffer</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">-5.4783</span>, <span class="number">0.2298</span> , <span class="number">0.11</span>],</span><br><span class="line">                           [<span class="number">-4.2573</span>, <span class="number">-0.4794</span> ,<span class="number">0.05</span>],</span><br><span class="line">                           [<span class="number">-0.1070</span>, <span class="number">-5.1511</span> , <span class="number">0.01</span>],</span><br><span class="line">                           [<span class="number">-0.1785</span>, <span class="number">-4.3339</span>,<span class="number">-0.02</span>]])</span><br><span class="line"></span><br><span class="line">value,index = output.topk(<span class="number">2</span>,dim=<span class="number">1</span>)</span><br><span class="line">print(value)</span><br><span class="line">print(index)</span><br></pre></td></tr></table></figure>
+<img src="/2019/05/04/pytorch-base-use/25.jpg">
 
       
     </div>
@@ -482,6 +545,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+          
+        </div>
+      
 
       
       
@@ -491,15 +560,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/04/usersim/" rel="next" title="任务型对话系统的用户模拟器">
+                <i class="fa fa-chevron-left"></i> 任务型对话系统的用户模拟器
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/01/19-5-1-leetcode/" rel="prev" title="分治">
-                分治 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch基础操作："><span class="nav-number">1.</span> <span class="nav-text">pytorch基础操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch拼接"><span class="nav-number">2.</span> <span class="nav-text">pytorch拼接</span></a></li></ol></div>
             
 
           </div>
@@ -840,9 +909,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/04/30/hello-world/";
-    this.page.identifier = "2019/04/30/hello-world/";
-    this.page.title = 'Test';
+    this.page.url = "http://yoursite.com/2019/05/04/pytorch-base-use/";
+    this.page.identifier = "2019/05/04/pytorch-base-use/";
+    this.page.title = 'pytorch基本语法';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
@@ -877,46 +946,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

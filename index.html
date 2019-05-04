@@ -337,6 +337,225 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/usersim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoduo zhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咖啡的日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/04/usersim/" class="post-title-link" itemprop="url">任务型对话系统的用户模拟器</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-04 10:19:39 / 修改时间：14:37:06" itemprop="dateCreated datePublished" datetime="2019-05-04T10:19:39+08:00">2019-05-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/对话系统，用户模拟器/" itemprop="url" rel="index"><span itemprop="name">对话系统，用户模拟器</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/04/usersim/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/04/usersim/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <img src="/2019/05/04/usersim/1.jpg">
+<p><a href="https://www.researchgate.net/publication/311737160_A_User_Simulator_for_Task-Completion_Dialogues" target="_blank" rel="noopener">原文链接</a></p>
+<h3 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h3><p>&emsp;&emsp;作者总结了前人构造用户模拟器方法，提出了一个比较通用的用户模拟器的框架，并且还有开源的源码，既包含基于规则又有基于模型的。</p>
+<h3 id="相关工作介绍"><a href="#相关工作介绍" class="headerlink" title="相关工作介绍"></a>相关工作介绍</h3><p>&emsp;&emsp;用户模拟器的构造一直是一个争议的问题，没有一个普遍可接受的标准，但是一个好的用户模拟器的重要的特征必须是在整个对话过程中具有连贯的行为。理想情况下，一个好的度量标准应该度量用户模拟器和真实人类行为之间的相关性，但是很难找到一个被广泛接受的度量标准。因此，没有标准的方法来构建用户模拟器。但可以从两方面来总结用户模拟器相关的文献:</p>
+<ul>
+<li>从 <strong>粒度</strong> 层面上来说，用户模拟器可以分为对话行为级别和语言级别</li>
+<li>从 <strong>方法</strong> 层面上来说，用户模拟器分为基于规则的和基于模型的（从训练数据中学习得到）</li>
+</ul>
+<h4 id="过去方法"><a href="#过去方法" class="headerlink" title="过去方法"></a>过去方法</h4><p>&emsp;&emsp;早期的模型有基于bi-gram的,利用$P(a_{u}|a_{m})$基于上一次系统行为去选择用户行为，但是比较不合理，有两点原因：1.这个模型只能看到最后一个系统行为。 2. 如果用户切换意图那么这个模型可能产出不和逻辑的行为，因为它没有把意图考虑进去。关这个方法的后续工作中，有很多工作都试图解决这些问题。问题1 可以通过查看更长的对话历史记录来选择下一个用户动作来解决;问题2 可以通过显式地将用户目标合并到用户状态建模中来解决。</p>
+<p>&emsp;&emsp;基于seq2seq的方式通过端到端的方法来模拟用户，这种方法把用户和系统的对话当做 源到端 的序列生成问题，可能更适合类似于chat-bot的类型，不太合适任务型对话，而且需要大量数据</p>
+<p>&emsp;&emsp; agenda-based  基于议程的用户模拟器提供一种方便的机制来显式编码对话历史和用户目标。用户目标goal由描述用户请求request和约束的slot-value对组成。对话状态由一个类似堆栈的格式表示，用户行为生成为一系列简单的push和pop操作，确保用户在会话过程中行为的一致性。</p>
+<h4 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h4><p>&emsp;&emsp;这篇文章结合seq2seq的方法和基于agenda-based的方法，在对话行为层面用agenda-based的方法，然后用一个seq2seq的方法来将对话行为翻译成自然语言的形式。</p>
+<h3 id="用户模拟器介绍"><a href="#用户模拟器介绍" class="headerlink" title="用户模拟器介绍"></a>用户模拟器介绍</h3><p>&emsp;&emsp;agenda-based的方法，利用栈来表示用户状态（包含对话历史和用户行为),状态更新（包含状态转换和用户行为生成）用栈的pop、push来建模。下面详细描述一个基于规则的用户模拟器。</p>
+<h4 id="用户目标"><a href="#用户目标" class="headerlink" title="用户目标"></a>用户目标</h4><p>&emsp;&emsp;对话的第一步是生成用户目标，用户目标包含两个部分：</p>
+<ul>
+<li>inform_slots 包含一些 slot value 对作为限制</li>
+<li>request_slots 包含一个slot集合 ，这个集合表示用户未知，但是在接下来的对话中想知道的。</li>
+</ul>
+<img src="/2019/05/04/usersim/2.jpg">
+<p>&emsp;&emsp;为了让目标更真实，加入一些限制规则：slot将被分为两组。对于买电影票场景，一些元素必须出现在用户目标中，称作 Required slots，包含 moviename, theater, starttime, date, number of people;剩下的元素作为可选项。ticket 是默认出现在request_slots部分的slot。</p>
+<p>&emsp;&emsp;从已标注的数据中生成用户目标，主要采用两种方法：</p>
+<ul>
+<li>从用户第一轮问句（打招呼的问句除外）中检测所有的槽（已知或未知）组建用户目标，因为第一句往往包含了用户所有的需求。</li>
+<li>从所有用户轮问题中提取所有的槽（以第一次出现为准），组建用户目标</li>
+</ul>
+<p>&emsp;&emsp;把得到的用户目标存在用户目标数据库中，每次运行一个对话就从中随机选取一个。</p>
+<h4 id="用户行为"><a href="#用户行为" class="headerlink" title="用户行为"></a>用户行为</h4><p>&emsp;&emsp; <strong>第一个用户行为：</strong>  这个工作关注用户行为的初始化，当我们随机选取一个用户目标时，为了保证真实性，在生成时需要加一些规则限制。比如，第一轮往往是request 行为，至少包含一个 informable slot，如果该意图知道电影名，那么moviename 必须出现在首轮，等；</p>
+<p>&emsp;&emsp;用户状态status $s_{u}$被分解为$agenda  A$ 和 $goal G$,其中 G 由两部分组成(C,R)分别表示 限制C和请求R。在每一个时间t，用户模拟器将会根据当前状态$s_{u,t}$和上个系统动作$a_{m,t-1}$生成下一个用户行为$a_{u,t}$,然后更新当前用户状态$s^{‘}_{u,t}$。</p>
+<p>&emsp;&emsp;没有NLU（自然语言理解）模块下，作者引入噪音模型来模拟NLU模块的失误。有两个级别的错误，意图级别的识别失误和slot级别的失误。slot有3中类型错误：</p>
+<ul>
+<li>slot deletion：槽未识别</li>
+<li>incorrect slot value：槽对槽值错</li>
+<li>incorrect slot：槽错</li>
+</ul>
+<p>&emsp;&emsp;如果代理动作是inform(taskcomplete)，则表示代理已经收集了所有信息并准备好预订电影票。用户模拟器将检查当前堆栈是否为空，并执行约束检查，以确保代理试图预订正确的电影票。这确保用户以一致的、面向目标的方式进行操作。</p>
+<img src="/2019/05/04/usersim/3.jpg">
+<h4 id="对话状态"><a href="#对话状态" class="headerlink" title="对话状态"></a>对话状态</h4><p>&emsp;&emsp;总共有3种状态：未结束，成功，失败。当agent不是inform(taskcomplete) 或者对话轮数没有超过阈值时状态都是 <strong>未结束</strong> 。完全满足条件则是超过，否则失败。</p>
+<p>&emsp;&emsp;有一个特殊情况，如果识别完全正确但数据库中没有，本文依然判断为失败。</p>
+<h4 id="NLU"><a href="#NLU" class="headerlink" title="NLU"></a>NLU</h4><p>&emsp;&emsp;使用一个LSTM网络joint 的训练intent识别和预测标签。 标签用IOB的方式标记，每句的结尾加上<eos>。</eos></p>
+<h4 id="NLG"><a href="#NLG" class="headerlink" title="NLG"></a>NLG</h4><p>&emsp;&emsp;本文采取了一个混合模板和模型的方法来实现NLG</p>
+<ul>
+<li>Template-based NLG：对于每个对话行为采用预定义的模板</li>
+<li>Model-based NLG：输入用户行为，通过一个LSTM decoder生成一个带slot placeholders的句子，后文再用真实的slot value 填充placeholders的值。在 LSTM decoder中采用 beam search（<a href="http://www.360doc.com/content/18/0618/09/17563728_763230413.shtml" target="_blank" rel="noopener">集束搜索</a>）,beam 的大小为3.</li>
+</ul>
+<p>&emsp;&emsp;如果对话行为能在预定义的规则模板中找到，则使用基于模板的NLG去生成，采用基于模型的方式。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>&emsp;&emsp;要度量代理的效果，有3个参数：{成功率，平均奖励，平均轮数}，它们都提供了关于代理质量的不同信息。一般而言他们3个是强相关的，一个好的代理同时具有这3方面比较优秀的数字。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/19-5-1-leetcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -382,7 +601,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 18:34:08 / 修改时间：19:14:28" itemprop="dateCreated datePublished" datetime="2019-05-01T18:34:08+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:34:08 / 修改时间：19:29:06" itemprop="dateCreated datePublished" datetime="2019-05-01T18:34:08+08:00">2019-05-01</time>
             
 
             
@@ -577,7 +796,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 19:12:42" itemprop="dateModified" datetime="2019-05-01T19:12:42+08:00">2019-05-01</time>
+                <time title="修改时间：2019-05-04 14:26:50" itemprop="dateModified" datetime="2019-05-04T14:26:50+08:00">2019-05-04</time>
               
             
           </span>
@@ -716,7 +935,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -735,7 +954,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -756,7 +977,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -965,11 +1192,55 @@
   
     
       
+        
+      
+    
+      
     
       
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

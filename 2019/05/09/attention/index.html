@@ -96,22 +96,29 @@
 
 
 
-  <meta name="description" content="原文链接 论文概述&amp;emsp;&amp;emsp;作者总结了前人构造用户模拟器方法，提出了一个比较通用的用户模拟器的框架，并且还有开源的源码，既包含基于规则又有基于模型的。 相关工作介绍&amp;emsp;&amp;emsp;用户模拟器的构造一直是一个争议的问题，没有一个普遍可接受的标准，但是一个好的用户模拟器的重要的特征必须是在整个对话过程中具有连贯的行为。理想情况下，一个好的度量标准应该度量用户模拟器和真实人类行为">
-<meta name="keywords" content="对话系统,用户模拟器,自然语言生成">
+  <meta name="description" content="转自：知乎 关于seq2seq实现链接 ： seq2seq &amp;emsp;&amp;emsp;seq2seq 是一个Encoder–Decoder 结构的网络，它的输入是一个序列，输出也是一个序列， Encoder 中将一个可变长度的信号序列变为固定长度的向量表达，Decoder 将这个固定长度的向量变成可变长度的目标的信号序列。 大体框架 如下：  细节框架如下：  核心公式：输入： $x = (x_{1">
+<meta name="keywords" content="attention,神经网络,pytorch，seq2seq,端到端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="任务型对话系统的用户模拟器">
-<meta property="og:url" content="http://yoursite.com/2019/05/04/usersim/index.html">
+<meta property="og:title" content="seq2seq 及 attention机制介绍">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/attention/index.html">
 <meta property="og:site_name" content="咖啡的日常">
-<meta property="og:description" content="原文链接 论文概述&amp;emsp;&amp;emsp;作者总结了前人构造用户模拟器方法，提出了一个比较通用的用户模拟器的框架，并且还有开源的源码，既包含基于规则又有基于模型的。 相关工作介绍&amp;emsp;&amp;emsp;用户模拟器的构造一直是一个争议的问题，没有一个普遍可接受的标准，但是一个好的用户模拟器的重要的特征必须是在整个对话过程中具有连贯的行为。理想情况下，一个好的度量标准应该度量用户模拟器和真实人类行为">
+<meta property="og:description" content="转自：知乎 关于seq2seq实现链接 ： seq2seq &amp;emsp;&amp;emsp;seq2seq 是一个Encoder–Decoder 结构的网络，它的输入是一个序列，输出也是一个序列， Encoder 中将一个可变长度的信号序列变为固定长度的向量表达，Decoder 将这个固定长度的向量变成可变长度的目标的信号序列。 大体框架 如下：  细节框架如下：  核心公式：输入： $x = (x_{1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/05/04/usersim/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/05/04/usersim/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/05/04/usersim/3.jpg">
-<meta property="og:updated_time" content="2019-05-04T06:48:53.265Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/1.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/2.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/3.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/4.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/5.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/6.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/7.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/71.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/8.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/09/attention/9.PNG">
+<meta property="og:updated_time" content="2019-05-09T06:52:39.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="任务型对话系统的用户模拟器">
-<meta name="twitter:description" content="原文链接 论文概述&amp;emsp;&amp;emsp;作者总结了前人构造用户模拟器方法，提出了一个比较通用的用户模拟器的框架，并且还有开源的源码，既包含基于规则又有基于模型的。 相关工作介绍&amp;emsp;&amp;emsp;用户模拟器的构造一直是一个争议的问题，没有一个普遍可接受的标准，但是一个好的用户模拟器的重要的特征必须是在整个对话过程中具有连贯的行为。理想情况下，一个好的度量标准应该度量用户模拟器和真实人类行为">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/04/usersim/1.jpg">
+<meta name="twitter:title" content="seq2seq 及 attention机制介绍">
+<meta name="twitter:description" content="转自：知乎 关于seq2seq实现链接 ： seq2seq &amp;emsp;&amp;emsp;seq2seq 是一个Encoder–Decoder 结构的网络，它的输入是一个序列，输出也是一个序列， Encoder 中将一个可变长度的信号序列变为固定长度的向量表达，Decoder 将这个固定长度的向量变成可变长度的目标的信号序列。 大体框架 如下：  细节框架如下：  核心公式：输入： $x = (x_{1">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/09/attention/1.PNG">
 
 
 
@@ -119,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/04/usersim/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/09/attention/">
 
 
 
@@ -129,7 +136,7 @@
   };
 </script>
 
-  <title>任务型对话系统的用户模拟器 | 咖啡的日常</title>
+  <title>seq2seq 及 attention机制介绍 | 咖啡的日常</title>
   
 
 
@@ -345,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/usersim/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/attention/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoduo zhou">
@@ -362,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">任务型对话系统的用户模拟器
+          <h1 class="post-title" itemprop="name headline">seq2seq 及 attention机制介绍
 
               
             
@@ -388,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-05-04 10:19:39 / 修改时间：14:48:53" itemprop="dateCreated datePublished" datetime="2019-05-04T10:19:39+08:00">2019-05-04</time>
+              <time title="创建时间：2019-05-09 13:55:58 / 修改时间：14:52:39" itemprop="dateCreated datePublished" datetime="2019-05-09T13:55:58+08:00">2019-05-09</time>
             
 
             
@@ -410,14 +417,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/对话系统/" itemprop="url" rel="index"><span itemprop="name">对话系统</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/对话系统/用户模拟器/" itemprop="url" rel="index"><span itemprop="name">用户模拟器</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
 
                 
                 
@@ -436,8 +436,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/04/usersim/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/04/usersim/" itemprop="commentCount"></span>
+                <a href="/2019/05/09/attention/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/09/attention/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -465,52 +465,41 @@
       
 
       
-        <img src="/2019/05/04/usersim/1.jpg">
-<p><a href="https://www.researchgate.net/publication/311737160_A_User_Simulator_for_Task-Completion_Dialogues" target="_blank" rel="noopener">原文链接</a></p>
-<h3 id="论文概述"><a href="#论文概述" class="headerlink" title="论文概述"></a>论文概述</h3><p>&emsp;&emsp;作者总结了前人构造用户模拟器方法，提出了一个比较通用的用户模拟器的框架，并且还有开源的源码，既包含基于规则又有基于模型的。</p>
-<h3 id="相关工作介绍"><a href="#相关工作介绍" class="headerlink" title="相关工作介绍"></a>相关工作介绍</h3><p>&emsp;&emsp;用户模拟器的构造一直是一个争议的问题，没有一个普遍可接受的标准，但是一个好的用户模拟器的重要的特征必须是在整个对话过程中具有连贯的行为。理想情况下，一个好的度量标准应该度量用户模拟器和真实人类行为之间的相关性，但是很难找到一个被广泛接受的度量标准。因此，没有标准的方法来构建用户模拟器。但可以从两方面来总结用户模拟器相关的文献:</p>
-<ul>
-<li>从 <strong>粒度</strong> 层面上来说，用户模拟器可以分为对话行为级别和语言级别</li>
-<li>从 <strong>方法</strong> 层面上来说，用户模拟器分为基于规则的和基于模型的（从训练数据中学习得到）</li>
-</ul>
-<h4 id="过去方法"><a href="#过去方法" class="headerlink" title="过去方法"></a>过去方法</h4><p>&emsp;&emsp;早期的模型有基于bi-gram的,利用$P(a_{u}|a_{m})$基于上一次系统行为去选择用户行为，但是比较不合理，有两点原因：1.这个模型只能看到最后一个系统行为。 2. 如果用户切换意图那么这个模型可能产出不和逻辑的行为，因为它没有把意图考虑进去。关这个方法的后续工作中，有很多工作都试图解决这些问题。问题1 可以通过查看更长的对话历史记录来选择下一个用户动作来解决;问题2 可以通过显式地将用户目标合并到用户状态建模中来解决。</p>
-<p>&emsp;&emsp;基于seq2seq的方式通过端到端的方法来模拟用户，这种方法把用户和系统的对话当做 源到端 的序列生成问题，可能更适合类似于chat-bot的类型，不太合适任务型对话，而且需要大量数据</p>
-<p>&emsp;&emsp; agenda-based  基于议程的用户模拟器提供一种方便的机制来显式编码对话历史和用户目标。用户目标goal由描述用户请求request和约束的slot-value对组成。对话状态由一个类似堆栈的格式表示，用户行为生成为一系列简单的push和pop操作，确保用户在会话过程中行为的一致性。</p>
-<h4 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h4><p>&emsp;&emsp;这篇文章结合seq2seq的方法和基于agenda-based的方法，在对话行为层面用agenda-based的方法，然后用一个seq2seq的方法来将对话行为翻译成自然语言的形式。</p>
-<h3 id="用户模拟器介绍"><a href="#用户模拟器介绍" class="headerlink" title="用户模拟器介绍"></a>用户模拟器介绍</h3><p>&emsp;&emsp;agenda-based的方法，利用栈来表示用户状态（包含对话历史和用户行为),状态更新（包含状态转换和用户行为生成）用栈的pop、push来建模。下面详细描述一个基于规则的用户模拟器。</p>
-<h4 id="用户目标"><a href="#用户目标" class="headerlink" title="用户目标"></a>用户目标</h4><p>&emsp;&emsp;对话的第一步是生成用户目标，用户目标包含两个部分：</p>
-<ul>
-<li>inform_slots 包含一些 slot value 对作为限制</li>
-<li>request_slots 包含一个slot集合 ，这个集合表示用户未知，但是在接下来的对话中想知道的。</li>
-</ul>
-<img src="/2019/05/04/usersim/2.jpg">
-<p>&emsp;&emsp;为了让目标更真实，加入一些限制规则：slot将被分为两组。对于买电影票场景，一些元素必须出现在用户目标中，称作 Required slots，包含 moviename, theater, starttime, date, number of people;剩下的元素作为可选项。ticket 是默认出现在request_slots部分的slot。</p>
-<p>&emsp;&emsp;从已标注的数据中生成用户目标，主要采用两种方法：</p>
-<ul>
-<li>从用户第一轮问句（打招呼的问句除外）中检测所有的槽（已知或未知）组建用户目标，因为第一句往往包含了用户所有的需求。</li>
-<li>从所有用户轮问题中提取所有的槽（以第一次出现为准），组建用户目标</li>
-</ul>
-<p>&emsp;&emsp;把得到的用户目标存在用户目标数据库中，每次运行一个对话就从中随机选取一个。</p>
-<h4 id="用户行为"><a href="#用户行为" class="headerlink" title="用户行为"></a>用户行为</h4><p>&emsp;&emsp; <strong>第一个用户行为：</strong>  这个工作关注用户行为的初始化，当我们随机选取一个用户目标时，为了保证真实性，在生成时需要加一些规则限制。比如，第一轮往往是request 行为，至少包含一个 informable slot，如果该意图知道电影名，那么moviename 必须出现在首轮，等；</p>
-<p>&emsp;&emsp;用户状态status $s_{u}$被分解为$agenda  A$ 和 $goal G$,其中 G 由两部分组成(C,R)分别表示 限制C和请求R。在每一个时间t，用户模拟器将会根据当前状态$s_{u,t}$和上个系统动作$a_{m,t-1}$生成下一个用户行为$a_{u,t}$,然后更新当前用户状态$s^{‘}_{u,t}$。</p>
-<p>&emsp;&emsp;没有NLU（自然语言理解）模块下，作者引入噪音模型来模拟NLU模块的失误。有两个级别的错误，意图级别的识别失误和slot级别的失误。slot有3中类型错误：</p>
-<ul>
-<li>slot deletion：槽未识别</li>
-<li>incorrect slot value：槽对槽值错</li>
-<li>incorrect slot：槽错</li>
-</ul>
-<p>&emsp;&emsp;如果代理动作是inform(taskcomplete)，则表示代理已经收集了所有信息并准备好预订电影票。用户模拟器将检查当前堆栈是否为空，并执行约束检查，以确保代理试图预订正确的电影票。这确保用户以一致的、面向目标的方式进行操作。</p>
-<img src="/2019/05/04/usersim/3.jpg">
-<h4 id="对话状态"><a href="#对话状态" class="headerlink" title="对话状态"></a>对话状态</h4><p>&emsp;&emsp;总共有3种状态：未结束，成功，失败。当agent不是inform(taskcomplete) 或者对话轮数没有超过阈值时状态都是 <strong>未结束</strong> 。完全满足条件则是超过，否则失败。</p>
-<p>&emsp;&emsp;有一个特殊情况，如果识别完全正确但数据库中没有，本文依然判断为失败。</p>
-<h4 id="NLU"><a href="#NLU" class="headerlink" title="NLU"></a>NLU</h4><p>&emsp;&emsp;使用一个LSTM网络joint 的训练intent识别和预测标签。 标签用IOB的方式标记，每句的结尾加上<eos>。</eos></p>
-<h4 id="NLG"><a href="#NLG" class="headerlink" title="NLG"></a>NLG</h4><p>&emsp;&emsp;本文采取了一个混合模板和模型的方法来实现NLG</p>
-<ul>
-<li>Template-based NLG：对于每个对话行为采用预定义的模板</li>
-<li>Model-based NLG：输入用户行为，通过一个LSTM decoder生成一个带slot placeholders的句子，后文再用真实的slot value 填充placeholders的值。在 LSTM decoder中采用 beam search（<a href="http://www.360doc.com/content/18/0618/09/17563728_763230413.shtml" target="_blank" rel="noopener">集束搜索</a>）,beam 的大小为3.</li>
-</ul>
-<p>&emsp;&emsp;如果对话行为能在预定义的规则模板中找到，则使用基于模板的NLG去生成，采用基于模型的方式。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>&emsp;&emsp;要度量代理的效果，有3个参数：{成功率，平均奖励，平均轮数}，它们都提供了关于代理质量的不同信息。一般而言他们3个是强相关的，一个好的代理同时具有这3方面比较优秀的数字。</p>
+        <p>转自：<a href="https://zhuanlan.zhihu.com/p/40920384" target="_blank" rel="noopener">知乎</a></p>
+<h3 id="关于seq2seq"><a href="#关于seq2seq" class="headerlink" title="关于seq2seq"></a>关于seq2seq</h3><p>实现链接 ： <a href="https://github.com/xiaoduozhou/nlp_examples/tree/master/NLG/seq2seq" target="_blank" rel="noopener">seq2seq</a></p>
+<p>&emsp;&emsp;seq2seq 是一个Encoder–Decoder 结构的网络，它的输入是一个序列，输出也是一个序列， Encoder 中将一个可变长度的信号序列变为固定长度的向量表达，Decoder 将这个固定长度的向量变成可变长度的目标的信号序列。</p>
+<p><strong>大体框架</strong> 如下：</p>
+<img src="/2019/05/09/attention/1.PNG">
+<p><strong>细节框架</strong>如下：</p>
+<img src="/2019/05/09/attention/2.PNG">
+<h3 id="核心公式："><a href="#核心公式：" class="headerlink" title="核心公式："></a>核心公式：</h3><p>输入： $x = (x_{1},…,x_{T_{x}})$<br>输出： $y = (y_{1},…,y_{T_{y}})$</p>
+<p>(1) $h_{t} = RNN_{enc}(x_{t},h_{t-1})$，Encoder方面接受的是每一个单词word embedding，和上一个时间点的hidden state。输出的是这个时间点的hidden state。</p>
+<img src="/2019/05/09/attention/3.PNG">
+<p>(2) $s_{t} = RNN_{dec}(y_{t}^{‘},s_{t-1})$，Decoder方面接受的是目标句子里单词的word embedding，和上一个时间点的hidden state。</p>
+<img src="/2019/05/09/attention/4.PNG">
+<p>(3) <script type="math/tex">c_{i}=\sum_{j=1}^{T_{x}}a_{ij}h_{j}</script>，context vector是一个对于encoder输出的hidden states的一个加权平均。</p>
+<p>(4)  <script type="math/tex">a_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})  }</script> ，每一个encoder的hidden states对应的权重。</p>
+<p>(5) $e_{ij} = score(s_{i},h_{j})$，通过decoder的hidden states加上encoder的hidden states来计算一个分数，用于计算权重(4)</p>
+<img src="/2019/05/09/attention/5.PNG">
+<img src="/2019/05/09/attention/6.PNG">
+<p>(6) $s_{t}^{‘}=tanh(W_{c}[c_{t};s_{t}])$ ，将context vector 和 decoder的hidden states 串起来。</p>
+<p>(7) $p(y_{t}|y_{&lt;t},x) = softmax(W_{s}s_{t}^{‘})$，计算最后的输出概率。</p>
+<img src="/2019/05/09/attention/7.PNG">
+<h3 id="Attention介绍"><a href="#Attention介绍" class="headerlink" title="Attention介绍"></a>Attention介绍</h3><p>&emsp;&emsp;在luong中提到了三种score的计算方法。这里图解前两种：<br><img src="/2019/05/09/attention/71.PNG"></p>
+<h4 id="Attention-score-function-dot"><a href="#Attention-score-function-dot" class="headerlink" title="Attention score function: dot"></a>Attention score function: dot</h4><img src="/2019/05/09/attention/8.PNG">
+<p>&emsp;&emsp;输入是encoder的所有hidden states H: 大小为(hid dim, sequence length)。decoder在一个时间点上的hidden state， s： 大小为（hid dim, 1）。</p>
+<ol>
+<li>旋转H为（sequence length, hid dim) 与s做点乘得到一个 大小为(sequence length, 1)的分数。</li>
+<li>对分数做softmax得到一个合为1的权重。</li>
+<li>将H与第二步得到的权重做点乘得到一个大小为(hid dim, 1)的context vector。</li>
+</ol>
+<h4 id="Attention-score-function-general"><a href="#Attention-score-function-general" class="headerlink" title="Attention score function: general"></a>Attention score function: general</h4><img src="/2019/05/09/attention/9.PNG">
+<p>&emsp;&emsp;输入是encoder的所有hidden states H: 大小为(hid_dim1, sequence length)。decoder在一个时间点上的hidden state， s： 大小为（hid_dim2, 1）。此处两个hidden state的纬度并不一样。</p>
+<ol>
+<li>旋转H为（sequence length, hid dim1) 与 Wa [大小为 (hid dim1, hid dim 2)] 做点乘， 再和s做点乘得到一个 大小为(sequence length, 1)的分数</li>
+<li>对分数做softmax得到一个合为1的权重。</li>
+<li>将H与第二步得到的权重做点乘得到一个大小为(hid dim, 1)的context vector。</li>
+</ol>
 
       
     </div>
@@ -534,11 +523,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/对话系统/" rel="tag"># 对话系统</a>
+            <a href="/tags/attention/" rel="tag"># attention</a>
           
-            <a href="/tags/用户模拟器/" rel="tag"># 用户模拟器</a>
+            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
           
-            <a href="/tags/自然语言生成/" rel="tag"># 自然语言生成</a>
+            <a href="/tags/pytorch，seq2seq/" rel="tag"># pytorch，seq2seq</a>
+          
+            <a href="/tags/端到端/" rel="tag"># 端到端</a>
           
         </div>
       
@@ -551,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/01/19-5-1-leetcode/" rel="next" title="分治">
-                <i class="fa fa-chevron-left"></i> 分治
+              <a href="/2019/05/08/condaUse/" rel="next" title="conda基本使用">
+                <i class="fa fa-chevron-left"></i> conda基本使用
               </a>
             
           </div>
@@ -560,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/04/pytorch-base-use/" rel="prev" title="pytorch基本语法">
-                pytorch基本语法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -760,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#论文概述"><span class="nav-number">1.</span> <span class="nav-text">论文概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关工作介绍"><span class="nav-number">2.</span> <span class="nav-text">相关工作介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#过去方法"><span class="nav-number">2.1.</span> <span class="nav-text">过去方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文方法"><span class="nav-number">2.2.</span> <span class="nav-text">本文方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户模拟器介绍"><span class="nav-number">3.</span> <span class="nav-text">用户模拟器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户目标"><span class="nav-number">3.1.</span> <span class="nav-text">用户目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户行为"><span class="nav-number">3.2.</span> <span class="nav-text">用户行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对话状态"><span class="nav-number">3.3.</span> <span class="nav-text">对话状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NLU"><span class="nav-number">3.4.</span> <span class="nav-text">NLU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NLG"><span class="nav-number">3.5.</span> <span class="nav-text">NLG</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于seq2seq"><span class="nav-number">1.</span> <span class="nav-text">关于seq2seq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心公式："><span class="nav-number">2.</span> <span class="nav-text">核心公式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention介绍"><span class="nav-number">3.</span> <span class="nav-text">Attention介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attention-score-function-dot"><span class="nav-number">3.1.</span> <span class="nav-text">Attention score function: dot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attention-score-function-general"><span class="nav-number">3.2.</span> <span class="nav-text">Attention score function: general</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -918,9 +905,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/05/04/usersim/";
-    this.page.identifier = "2019/05/04/usersim/";
-    this.page.title = '任务型对话系统的用户模拟器';
+    this.page.url = "http://yoursite.com/2019/05/09/attention/";
+    this.page.identifier = "2019/05/09/attention/";
+    this.page.title = 'seq2seq 及 attention机制介绍';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

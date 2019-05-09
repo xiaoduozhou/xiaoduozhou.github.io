@@ -114,7 +114,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/23.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/24.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/25.jpg">
-<meta property="og:updated_time" content="2019-05-04T08:58:20.779Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/26.PNG">
+<meta property="og:image" content="http://yoursite.com/2019/05/04/pytorch-base-use/27.PNG">
+<meta property="og:updated_time" content="2019-05-09T02:58:32.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pytorch基本语法">
 <meta name="twitter:description" content="pytorch基础操作： 初始化0矩阵12x = torch.zeros(5, 3, dtype=torch.float)x = torch.tensor([5.5, 3]) #构建指定元素的矩阵     加法123x = torch.randn(2,3)y = torch.randn(2,3)z = torch.add(x, y)     任何要原地改动tensor的操作，需要加 _. 比如:">
@@ -395,12 +397,24 @@
                 
               
 
-              <time title="创建时间：2019-05-04 15:17:30 / 修改时间：16:58:20" itemprop="dateCreated datePublished" datetime="2019-05-04T15:17:30+08:00">2019-05-04</time>
+              <time title="创建时间：2019-05-04 15:17:30" itemprop="dateCreated datePublished" datetime="2019-05-04T15:17:30+08:00">2019-05-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-09 10:58:32" itemprop="dateModified" datetime="2019-05-09T10:58:32+08:00">2019-05-09</time>
               
             
           </span>
@@ -524,6 +538,16 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">-5.4783</span>, <span class="number">0.2298</span> , <span class="number">0.11</span>],</span><br><span class="line">                           [<span class="number">-4.2573</span>, <span class="number">-0.4794</span> ,<span class="number">0.05</span>],</span><br><span class="line">                           [<span class="number">-0.1070</span>, <span class="number">-5.1511</span> , <span class="number">0.01</span>],</span><br><span class="line">                           [<span class="number">-0.1785</span>, <span class="number">-4.3339</span>,<span class="number">-0.02</span>]])</span><br><span class="line"></span><br><span class="line">value,index = output.topk(<span class="number">2</span>,dim=<span class="number">1</span>)</span><br><span class="line">print(value)</span><br><span class="line">print(index)</span><br></pre></td></tr></table></figure>
 <img src="/2019/05/04/pytorch-base-use/25.jpg">
+<ul>
+<li>扩大张量 expand<br>返回张量的一个新视图，可以将张量的 <strong>单个维度</strong> 扩大为更大的尺寸。<br>张量也可以扩大为更高维，新增加的维度将附在前面。 扩大张量不需要分配新内存，仅仅是新建一个张量的视图。任意一个一维张量在不分配新内存情况下都可以扩展为任意的维度。<br>传入-1则意味着维度扩大不涉及这个维度。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = torch.rand((2,3,1))</span><br><span class="line">b = a.expand(2,3,4)</span><br><span class="line">c = a.expand(-1,-1,4)</span><br><span class="line">print(&quot;a&quot;,a)</span><br><span class="line">print(&quot;b&quot;,b)</span><br><span class="line">print(&quot;c&quot;,c)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/26.PNG">
+<ul>
+<li>沿着某个维度重复 repeat<br>几个数字分别表示原来维度上重复的数字，如果多了就相当于多加一个维度<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = torch.randn([2,2,3])</span><br><span class="line">print(A.shape,A.repeat(3,2,2,3).shape)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<img src="/2019/05/04/pytorch-base-use/27.PNG">
 
       
     </div>

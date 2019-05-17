@@ -337,6 +337,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/docker-use/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoduo zhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咖啡的日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/17/docker-use/" class="post-title-link" itemprop="url">docker_use</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-17 13:04:09 / 修改时间：14:06:34" itemprop="dateCreated datePublished" datetime="2019-05-17T13:04:09+08:00">2019-05-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发工具/" itemprop="url" rel="index"><span itemprop="name">开发工具</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/17/docker-use/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/17/docker-use/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>docker  是一个开源的应用容器引擎，Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p><a href="https://www.docker.com/get-started" target="_blank" rel="noopener">下载安装</a><br><a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">docker国内镜像</a></p>
+<p><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## List Docker CLI commands</span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line">## Display Docker version and info</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## Execute Docker image</span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line">## List Docker images</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## List Docker containers (running, all, all in quiet mode)</span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  # Create image using this directory&apos;s Dockerfile</span><br><span class="line">docker run -p 4000:80 friendlyhello  # Run &quot;friendlyhello&quot; mapping port 4000 to 80</span><br><span class="line">docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode</span><br><span class="line">docker container ls                                # List all running containers</span><br><span class="line">docker container ls -a             # List all containers, even those not running</span><br><span class="line">docker container stop &lt;hash&gt;           # Gracefully stop the specified container</span><br><span class="line">docker container kill &lt;hash&gt;         # Force shutdown of the specified container</span><br><span class="line">docker container rm &lt;hash&gt;        # Remove specified container from this machine</span><br><span class="line">docker container rm $(docker container ls -a -q)         # Remove all containers</span><br><span class="line">docker image ls -a                             # List all images on this machine</span><br><span class="line">docker image rm &lt;image id&gt;            # Remove specified image from this machine</span><br><span class="line">docker image rm $(docker image ls -a -q)   # Remove all images from this machine</span><br><span class="line">docker login             # Log in this CLI session using your Docker credentials</span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  # Tag &lt;image&gt; for upload to registry</span><br><span class="line">docker push username/repository:tag            # Upload tagged image to registry</span><br><span class="line">docker run username/repository:tag                   # Run image from a registry</span><br></pre></td></tr></table></figure>
+<p>注意：遇到下面这个情况时</p>
+<img src="/2019/05/17/docker-use/1.png">
+<p>设置：<br>Right click Docker instance<br>Go to Settings<br>Daemon<br>Advanced<br>Set the experimental: true<br><img src="/2019/05/17/docker-use/2.PNG"></p>
+<p>然后成功运行<br><img src="/2019/05/17/docker-use/3.PNG"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/littleskill/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1774,7 +1956,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1844,7 +2026,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2051,6 +2235,8 @@
 
   
   
+    
+      
     
       
     

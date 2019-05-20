@@ -357,7 +357,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/17/docker-use/" class="post-title-link" itemprop="url">docker_use</a>
+                <a href="/2019/05/17/docker-use/" class="post-title-link" itemprop="url">docker使用</a>
               
             
           </h1>
@@ -382,12 +382,24 @@
                 
               
 
-              <time title="创建时间：2019-05-17 13:04:09 / 修改时间：23:10:55" itemprop="dateCreated datePublished" datetime="2019-05-17T13:04:09+08:00">2019-05-17</time>
+              <time title="创建时间：2019-05-17 13:04:09" itemprop="dateCreated datePublished" datetime="2019-05-17T13:04:09+08:00">2019-05-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-20 14:30:33" itemprop="dateModified" datetime="2019-05-20T14:30:33+08:00">2019-05-20</time>
               
             
           </span>
@@ -454,15 +466,20 @@
       
         
           
-            <p>docker  是一个开源的应用容器引擎，Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。<br><a href="https://yeasy.gitbooks.io/docker_practice/image/dockerfile/dockerfile/dockerfile/container/run.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/image/dockerfile/dockerfile/dockerfile/container/run.html</a></p>
-<p><a href="https://www.docker.com/get-started" target="_blank" rel="noopener">下载安装</a><br><a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">docker国内镜像</a></p>
-<p><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">官方文档</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## List Docker CLI commands</span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line">## Display Docker version and info</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## Execute Docker image</span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line">## List Docker images</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## List Docker containers (running, all, all in quiet mode)</span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  # Create image using this directory&apos;s Dockerfile</span><br><span class="line">docker run -p 4000:80 friendlyhello  # Run &quot;friendlyhello&quot; mapping port 4000 to 80</span><br><span class="line">docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode</span><br><span class="line">docker container ls                                # List all running containers</span><br><span class="line">docker container ls -a             # List all containers, even those not running</span><br><span class="line">docker container stop &lt;hash&gt;           # Gracefully stop the specified container</span><br><span class="line">docker container kill &lt;hash&gt;         # Force shutdown of the specified container</span><br><span class="line">docker container rm &lt;hash&gt;        # Remove specified container from this machine</span><br><span class="line">docker container rm $(docker container ls -a -q)         # Remove all containers</span><br><span class="line">docker image ls -a                             # List all images on this machine</span><br><span class="line">docker image rm &lt;image id&gt;            # Remove specified image from this machine</span><br><span class="line">docker image rm $(docker image ls -a -q)   # Remove all images from this machine</span><br><span class="line">docker login             # Log in this CLI session using your Docker credentials</span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  # Tag &lt;image&gt; for upload to registry</span><br><span class="line">docker push username/repository:tag            # Upload tagged image to registry</span><br><span class="line">docker run username/repository:tag                   # Run image from a registry</span><br></pre></td></tr></table></figure>
-<p>注意：遇到下面这个情况时</p>
+            <h3 id="docker简介"><a href="#docker简介" class="headerlink" title="docker简介"></a>docker简介</h3><p>&emsp;&emsp;docker  是一个开源的应用容器引擎，Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。<br><a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">相关文档</a>     <a href="https://www.docker.com/get-started" target="_blank" rel="noopener">下载安装</a>     <a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">docker国内镜像</a>     <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">## 展示docker信息</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## 运行docker镜像(加上-it则是交互式运行)  ctrl+D退出交互模式</span><br><span class="line">docker run hello-world</span><br><span class="line">docker run -it hello-world  </span><br><span class="line"></span><br><span class="line">## 列出所有镜像</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## 列出所有容器（容器相当于对象，镜像相当于类） </span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br><span class="line"></span><br><span class="line">## 列出所有运行的docker容器</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 进入运行的容器中</span><br><span class="line">docker exec -it 容器ID  bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##  提交修改</span><br><span class="line">docker commit [选项] &lt;容器ID或容器名&gt; [&lt;仓库名&gt;[:&lt;标签&gt;]]</span><br><span class="line"></span><br><span class="line">## 停止容器(停止容器后所有的修改都会消失)</span><br><span class="line">docker stop  容器ID</span><br><span class="line">docker kill   容器ID</span><br><span class="line"></span><br><span class="line">## 重启容器 Docker 容器</span><br><span class="line">docker restart 容器ID</span><br><span class="line"></span><br><span class="line">## 复制文件到docker容器中（或相反） (注意：window系统必须要停止容器后才能复制，然后重新打开容器)</span><br><span class="line">docker cp /path/to/file1 容器ID:/path/to/file2</span><br><span class="line">docker cp 容器ID:/path/to/file2   /path/to/file1</span><br></pre></td></tr></table></figure>
+<h3 id="完整例子"><a href="#完整例子" class="headerlink" title="完整例子"></a>完整例子</h3><h3 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h3><ul>
+<li>docker导致VMware启动不了<br><a href="https://blog.minirplus.com/10268/" target="_blank" rel="noopener">https://blog.minirplus.com/10268/</a></li>
+</ul>
+<ul>
+<li><p>注意：遇到下面这个情况时</p>
 <img src="/2019/05/17/docker-use/1.png">
-<p>设置：<br>Right click Docker instance<br>Go to Settings<br>Daemon<br>Advanced<br>Set the experimental: true<br><img src="/2019/05/17/docker-use/2.PNG"></p>
-<p>然后成功运行<br><img src="/2019/05/17/docker-use/3.PNG"></p>
+<p>设置：</p>
+ <img src="/2019/05/17/docker-use/2.PNG">
+<p> 然后成功运行</p>
+ <img src="/2019/05/17/docker-use/3.PNG">
+</li>
+</ul>
 
           
         

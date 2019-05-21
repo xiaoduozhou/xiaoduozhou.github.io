@@ -972,12 +972,24 @@
                 
               
 
-              <time title="创建时间：2019-05-08 19:17:43 / 修改时间：19:58:33" itemprop="dateCreated datePublished" datetime="2019-05-08T19:17:43+08:00">2019-05-08</time>
+              <time title="创建时间：2019-05-08 19:17:43" itemprop="dateCreated datePublished" datetime="2019-05-08T19:17:43+08:00">2019-05-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-21 11:16:45" itemprop="dateModified" datetime="2019-05-21T11:16:45+08:00">2019-05-21</time>
               
             
           </span>
@@ -1054,6 +1066,9 @@
 <p>7.conda复制环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n 新名字 --clone 已存在的conda名</span><br><span class="line">如：conda create -n BBB --clone AAA</span><br></pre></td></tr></table></figure></p>
 <p>8.conda导出以及导入已有环境：<br>在新机器上会自动执行创建出一个相同的环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env export &gt; environment.yaml   导出</span><br><span class="line"></span><br><span class="line">conda env create -f environment.yaml  导入</span><br></pre></td></tr></table></figure></p>
 <p>9.pip导出包以及导入包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt  导出</span><br><span class="line"></span><br><span class="line">pip install -r requirements.txt   导入</span><br></pre></td></tr></table></figure></p>
+<h3 id="conda使用错误情况"><a href="#conda使用错误情况" class="headerlink" title="conda使用错误情况"></a>conda使用错误情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda activate myConda</span><br><span class="line">报错</span><br><span class="line">CommandNotFoundError: Your shell has not been properly configured to use &apos;conda activate&apos;.</span><br></pre></td></tr></table></figure>
+<img src="/2019/05/08/condaUse/2.PNG">
+<p>解决办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 激活环境</span><br><span class="line">source activate</span><br><span class="line"># 退出环境</span><br><span class="line">source deactivate</span><br></pre></td></tr></table></figure></p>
 
           
         

@@ -40,7 +40,7 @@
   <entry>
     <title><![CDATA[conda基本使用]]></title>
     <url>%2F2019%2F05%2F08%2FcondaUse%2F</url>
-    <content type="text"><![CDATA[conda常用命令1.查看已安装环境123conda info -e或conda env list 2.创建新环境mycondaEnv1conda create -n mycondaEnv python=3.5 3.激活conda1conda activate mycondaEnv 4.退出当前环境：1conda deactivate 5.删除conda1conda env remove -n mycondaEnv 6.在conda中安装包1234conda env list 查看环境conda activate mycondaEnv 激活进入环境pip install jieba 安装包conda deactivate 退出环境 7.conda复制环境12conda create -n 新名字 --clone 已存在的conda名如：conda create -n BBB --clone AAA 8.conda导出以及导入已有环境：在新机器上会自动执行创建出一个相同的环境123conda env export &gt; environment.yaml 导出conda env create -f environment.yaml 导入 9.pip导出包以及导入包123pip freeze &gt; requirements.txt 导出pip install -r requirements.txt 导入]]></content>
+    <content type="text"><![CDATA[conda常用命令1.查看已安装环境123conda info -e或conda env list 2.创建新环境mycondaEnv1conda create -n mycondaEnv python=3.5 3.激活conda1conda activate mycondaEnv 4.退出当前环境：1conda deactivate 5.删除conda1conda env remove -n mycondaEnv 6.在conda中安装包1234conda env list 查看环境conda activate mycondaEnv 激活进入环境pip install jieba 安装包conda deactivate 退出环境 7.conda复制环境12conda create -n 新名字 --clone 已存在的conda名如：conda create -n BBB --clone AAA 8.conda导出以及导入已有环境：在新机器上会自动执行创建出一个相同的环境123conda env export &gt; environment.yaml 导出conda env create -f environment.yaml 导入 9.pip导出包以及导入包123pip freeze &gt; requirements.txt 导出pip install -r requirements.txt 导入 conda使用错误情况123conda activate myConda报错CommandNotFoundError: Your shell has not been properly configured to use &apos;conda activate&apos;. 解决办法1234# 激活环境source activate# 退出环境source deactivate]]></content>
       <categories>
         <category>开发工具</category>
       </categories>

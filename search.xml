@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[碎片知识]]></title>
+    <url>%2F2019%2F05%2F27%2F%E7%A2%8E%E7%89%87%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[用utf-8读取文件时出现非法字符： “\ufeff”字符，只需将utf-8改成 UTF-8无BOM格式编码即可。 1sentence = sentence.encode(&apos;utf-8&apos;).decode(&apos;utf-8-sig&apos;) Json 保存文件与读取文件1234567import jsonwith open(input_file, encoding=&apos;utf-8&apos;) as f: dicts = json.load(f)with open(dir+&quot;/final.json&quot;, &apos;w&apos;,encoding = &apos;utf-8&apos;) as f: json.dump(final_json,f,ensure_ascii=False)]]></content>
+      <categories>
+        <category>python基础</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>乱码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python基础知识碎片]]></title>
+    <url>%2F2019%2F05%2F24%2Fpython%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[python语法基础知识 判断字典key是否存在 方法1.使用自带函数 12345#生成一个字典d = &#123;&apos;name&apos;:Tom, &apos;age&apos;:10, &apos;Tel&apos;:110&#125;#打印返回值print d.has_key(&apos;name&apos;)#结果返回True 方法2.使用in方法 12345#生成一个字典d = &#123;&apos;name&apos;:Tom, &apos;age&apos;:10, &apos;Tel&apos;:110&#125;#打印返回值，其中d.keys()是列出字典所有的keyprint ‘name’ in d.keys()print &apos;name&apos; in d]]></content>
+      <categories>
+        <category>python基础</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PyTorch里面的torch.nn.Parameter()]]></title>
     <url>%2F2019%2F05%2F23%2Fpytorch-nn-Parameter%2F</url>
     <content type="text"><![CDATA[转载 原文链接 torch.nn.Parameter()官方介绍&emsp;&emsp;Parameters对象是一种会被视为模块参数（module parameter）的Tensor张量。 &emsp;&emsp;Parameters类是Tensor 的子类, 不过相对于它的父类，Parameters类有一个很重要的特性就是当其在 Module类中被使用并被当做这个Module类的模块属性的时候，那么这个Parameters对象会被自动地添加到这个Module类的参数列表(list of parameters)之中，同时也就会被添加入此Module类的 parameters()方法所返回的参数迭代器中。而Parameters类的父类Tensor类也可以被用为构建模块的属性，但不会被加入参数列表。这样主要是因为，有时可能需要在模型中存储一些非模型参数的临时状态，比如RNN中的最后一个隐状态。而通过使用非Parameter的 Tensor类，可以将这些临时变量注册(register)为模型的属性的同时使其不被加入参数列表。Parameters: data (Tensor) – 参数张量(parameter tensor). requires_grad (bool, optional) – 参数是否需要梯度， 默认为 True。更多细节请看 如何将子图踢出反向传播过程。+ torch.nn.Parameter() 具体说明&emsp;&emsp;在刷官方Tutorial的时候发现了一个用法self.v = torch.nn.Parameter(torch.FloatTensor(hidden_size)),看了官方教程里面的解释也是云里雾里，于是在栈溢网看到了一篇解释，并做了几个实验才算完全理解了这个函数。首先可以把这个函数理解为类型转换函数，将一个不可训练的类型Tensor转换成可以训练的类型parameter并将这个parameter绑定到这个module里面(net.parameter()中就有这个绑定的parameter，所以在参数优化的时候可以进行优化的)，所以经过类型转换这个self.v变成了模型的一部分，成为了模型中根据训练可以改动的参数了。使用这个函数的目的也是想让某些变量在学习的过程中不断的修改其值以达到最优化。 &emsp;&emsp;在concat注意力机制中，权值V是不断学习的所以要是parameter类型，不直接使用一个torch.nn.Linear()可能是因为学习的效果不好。通过做下面的实验发现，linear里面的weight和bias就是parameter类型，且不能够使用tensor类型替换，还有linear里面的weight甚至可能通过指定一个不同于初始化时候的形状进行模型的更改。]]></content>

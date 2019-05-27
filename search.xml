@@ -48,7 +48,7 @@
   <entry>
     <title><![CDATA[每周小技巧]]></title>
     <url>%2F2019%2F05%2F12%2Flittleskill%2F</url>
-    <content type="text"><![CDATA[pytorch GPU使用 查看gpu使用情况nvidia-smi 指定GPU 12import osos.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;2&quot; 命令行指定 1CUDA_VISIBLE_DEVICES=1 python Train.py]]></content>
+    <content type="text"><![CDATA[pytorch GPU使用 查看gpu使用情况nvidia-smi 使用 kill -9 进程id1kill -9 144953 指定GPU 12import osos.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;2&quot; 命令行指定 1CUDA_VISIBLE_DEVICES=1 python Train.py]]></content>
       <categories>
         <category>pytorch基础</category>
       </categories>
